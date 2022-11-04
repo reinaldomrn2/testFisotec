@@ -1,0 +1,57 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button
+      class="nav-link"
+      [ngClass]="{'active': isActive('informacion-elemento')}"
+      id="home-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#information-tab-pane"
+      type="button"
+      role="tab"
+      aria-controls="information-tab-pane"
+      aria-selected="true"
+      (click)="handleClickTab('informacion-elemento')"
+    >
+      <i class="bi bi-info-square"></i> Información
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button
+      class="nav-link"
+      [ngClass]="{'active': isActive('analisis-grafico')}"
+      id="profile-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#chart-tab-pane"
+      type="button"
+      role="tab"
+      aria-controls="chart-tab-pane"
+      aria-selected="false"
+      (click)="handleClickTab('analisis-grafico')"
+    >
+      <i class="bi bi-pie-chart-fill"></i> Grafica
+    </button>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div
+    class="tab-pane fade"
+    [ngClass]="{'show active': isActive('informacion-elemento')}"
+    id="information-tab-pane"
+    role="tabpanel"
+    aria-labelledby="information-tab"
+    tabindex="0"
+  >
+    <app-map-information></app-map-information>
+  </div>
+  <div
+    class="tab-pane fade"
+    [ngClass]="{'show active': isActive('analisis-grafico')}"
+    id="chart-tab-pane"
+    role="tabpanel"
+    aria-labelledby="chart-tab"
+    tabindex="0"
+  >
+    <app-high-chart></app-high-chart>
+  </div>
+</div>

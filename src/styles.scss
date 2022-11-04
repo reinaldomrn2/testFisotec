@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar {
+  background-color: #119973;
+  span{
+    color: white !important;
+  }
+}
+
+.higth-max {
+  height: 780px;
+}
+
+.highcharts-credits{
+  display: none !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .higth-max {
+    height: 400px;
+  }
+  .title-filter {
+    margin-top: 10px !important;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="container-table higth-max" >
+  <ng-container *ngIf="notSelected">
+    <div class="text-center message text-secundary" @fade>
+      <i class="bi bi-info-circle"></i>
+      <p>Haga click encima o cerca de un elemento para seleccionarlo.</p>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!notSelected" >
+    <table class="table table-striped-columns" @enterState>
+      <tbody>
+        <tr *ngFor="let row of rows" >
+          <td> {{ row.name }} </td>
+          <td>{{ getString(information[row.key]) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>

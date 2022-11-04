@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 mt-3">
+      <form autocomplete="off" [formGroup]="filter">
+        <select class="form-control" formControlName="filter" (change)="handleChange()" #filterType>
+          <option value="">Seleccione una opción...</option>
+          <option value="tipo_soporte">Tipo de Soporte</option>
+          <option value="tipo_luminaria">Tipo de luminaria</option>
+          <option value="tipo_lampara">Tipo de lampara</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <ng-container *ngIf="isEmpty">
+    <div class="text-center message text-secundary" @fade>
+      <i class="bi bi-info-circle"></i>
+      <p>Seleccione una opción</p>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!isEmpty">
+    <div class="row title-filter">
+      <div class="col-md-12 mt-3 text-center">
+        <h4>{{ typeFilterSelected }}</h4>
+        <p><small>Nº total de luminarias {{ total }}</small></p>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-12 mt-3 text-center">
+        <app-chart-pie></app-chart-pie>
+      </div>
+    </div>
+  </ng-container>
+</div>

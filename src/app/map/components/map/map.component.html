@@ -1,0 +1,8 @@
+<div
+  @enterState
+  class="map-container higth-max"
+  leaflet
+  [leafletLayer]="baseLayer"
+  [leafletFitBounds]="mapFitBounds"
+  (leafletMapReady)="onMapReady($event)"
+></div>
